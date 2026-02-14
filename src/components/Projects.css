@@ -1,0 +1,251 @@
+.projects-section {
+    padding: 4rem 0;
+    overflow: hidden;
+    /* Prevent horizontal scroll from off-screen cards */
+}
+
+/* Carousel Container */
+.carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    padding: 2rem 0;
+    perspective: 1000px;
+    height: 600px;
+    /* Explicit height for the carousel area */
+}
+
+/* Phone Mockup */
+.phone-card {
+    width: 280px;
+    height: 560px;
+    /* ~9:18 aspect ratio */
+    border-radius: 36px;
+    border: 12px solid #1f2937;
+    /* Dark bezel */
+    background: #000;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    opacity: 0.6;
+    transform: scale(0.9);
+    cursor: pointer;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.phone-card.active {
+    opacity: 1;
+    transform: scale(1.1);
+    z-index: 10;
+    border-color: #374151;
+    /* Lighter bezel for active */
+    box-shadow: 0 30px 60px rgba(56, 189, 248, 0.2);
+    /* Primary glow */
+}
+
+/* Phone Screen (Image) */
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 24px;
+    /* Inner radius matching bezel */
+    background: #0f172a;
+    position: relative;
+}
+
+.phone-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Notch / Camera */
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 24px;
+    background: #1f2937;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 20;
+}
+
+/* Desktop Hover Overlay */
+.phone-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    /* Dark overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+/* Only show overlay on hover for active card on desktop */
+@media (min-width: 769px) {
+    .phone-card.active:hover .phone-overlay {
+        opacity: 1;
+    }
+}
+
+.overlay-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.overlay-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    border-radius: 999px;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+}
+
+/* Navigation Buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(31, 41, 55, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background: var(--color-primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.prev {
+    left: 1rem;
+}
+
+.nav-btn.next {
+    right: 1rem;
+}
+
+/* Mobile Details Container (Bottom) */
+.mobile-details {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--color-bg-secondary);
+    border-radius: 1rem;
+    border: 1px solid var(--color-border);
+    animation: slideUp 0.3s ease-out;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.detail-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.detail-desc {
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    background: rgba(56, 189, 248, 0.1);
+    color: var(--color-primary);
+    border-radius: 999px;
+    font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 2rem 0;
+        overflow: visible;
+        /* Allow scrolling */
+    }
+
+    .carousel-container {
+        flex-direction: column;
+        height: auto;
+        gap: 3rem;
+        perspective: none;
+        /* Flatten for list view */
+    }
+
+    .phone-card {
+        width: 100%;
+        max-width: 320px;
+        height: 600px;
+        transform: none !important;
+        /* Reset scale/transform */
+        opacity: 1 !important;
+        /* All visible */
+        margin: 0 auto;
+    }
+
+    /* Hide nav buttons on mobile as it is now a list */
+    .nav-btn {
+        display: none;
+    }
+}

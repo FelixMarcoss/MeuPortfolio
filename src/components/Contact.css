@@ -1,0 +1,76 @@
+.contact-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.contact-subtitle {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.contact-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 2rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+    background: var(--color-bg-tertiary);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+}
+
+.contact-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card .label {
+    font-weight: 700;
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-card .value {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.contact-card:hover .label {
+    color: var(--color-primary);
+}
+
+/* Specific accent colors on hover */
+.contact-card.instagram:hover .icon {
+    filter: drop-shadow(0 0 10px #E1306C);
+}
+
+.contact-card.linkedin:hover .icon {
+    filter: drop-shadow(0 0 10px #0077B5);
+}
+
+.contact-card.phone:hover .icon {
+    filter: drop-shadow(0 0 10px #25D366);
+}
