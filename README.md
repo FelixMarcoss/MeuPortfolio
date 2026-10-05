@@ -1,6 +1,6 @@
 # Meu Portfólio
 
-Site pessoal de Marcos Ferreira para apresentar seu foco em desenvolvimento Flutter/mobile, um projeto em destaque e canais de contato.
+Meu site para apresentar seu foco em desenvolvimento Flutter/mobile, um projeto em destaque e canais de contato.
 
 **Acesse:** [felixmarcoss.github.io/MeuPortfolio](https://felixmarcoss.github.io/MeuPortfolio/)
 
@@ -41,4 +41,3 @@ npm run lint
 | [`src/components/Projects.jsx`](src/components/Projects.jsx) | Lista e interação dos projetos |
 | [`src/components/Contact.jsx`](src/components/Contact.jsx) | Canais de contato |
 
-O conteúdo do portfólio é mantido diretamente nos componentes. Não há painel de administração nem carregamento dinâmico de projetos.
