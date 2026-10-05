@@ -11,7 +11,6 @@ Site pessoal de Marcos Ferreira para apresentar seu foco em desenvolvimento Flut
 - área de contato e navegação entre as seções;
 - layout responsivo com estilos separados por componente.
 
-Atualmente, a seção de projetos exibe um cartão do **Nexus**. Os dados do cartão estão definidos em [`src/components/Projects.jsx`](src/components/Projects.jsx); para incluir outros trabalhos, basta ampliar a lista `projectsData` e adicionar os recursos visuais correspondentes.
 
 ## Tecnologias
 
